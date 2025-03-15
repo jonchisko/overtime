@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dfutryjmw4122"
+path="res://.godot/imported/Sword Attack 1.ogg-20fbc191da30bd31489287b2d74aef7f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/swords/Sword Attack 1.ogg"
+dest_files=["res://.godot/imported/Sword Attack 1.ogg-20fbc191da30bd31489287b2d74aef7f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

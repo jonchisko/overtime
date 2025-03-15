@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dt0xg2s2l6gcg"
+path="res://.godot/imported/Inside Night.ogg-e72c8d4c5f13d57b6bf4bbece500637d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/ambient/Interior Night/Inside Night.ogg"
+dest_files=["res://.godot/imported/Inside Night.ogg-e72c8d4c5f13d57b6bf4bbece500637d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

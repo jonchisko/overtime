@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://brodgikcsx5gg"
+path="res://.godot/imported/Sword Unsheath 2.ogg-39b0b4495d0875335264f2526e098266.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/swords/Sword Unsheath 2.ogg"
+dest_files=["res://.godot/imported/Sword Unsheath 2.ogg-39b0b4495d0875335264f2526e098266.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

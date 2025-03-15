@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b7m28e5b1qwiq"
+path="res://.godot/imported/mine 2.ogg-0f617f78f8497e226346044bece68efb.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/mining/mine 2.ogg"
+dest_files=["res://.godot/imported/mine 2.ogg-0f617f78f8497e226346044bece68efb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
