@@ -1,0 +1,154 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3kbcd8bx236d"]
+
+[ext_resource type="Texture2D" uid="uid://naw018vjma6d" path="res://assets/ui/Sprite-0008-Sheet.png" id="1_is2s3"]
+[ext_resource type="AudioStream" uid="uid://cocwcehn4upbe" path="res://assets/audio/sfx/torch/Torch Loop.ogg" id="2_fpwfc"]
+[ext_resource type="Script" path="res://scenes/ui/top_stem.gd" id="2_hhirv"]
+
+[sub_resource type="Animation" id="Animation_r1nr7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flame:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(48, 30, 16, 16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Flame:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jogye"]
+resource_name = "flame"
+length = 0.48
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flame:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(48, 30, 16, 16), Rect2(64, 30, 16, 16), Rect2(80, 30, 16, 16), Rect2(96, 30, 16, 16), Rect2(112, 30, 16, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_6rocu"]
+resource_name = "flame_in"
+length = 0.48
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flame:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(48, 30, 16, 16), Rect2(64, 30, 16, 16), Rect2(80, 30, 16, 16), Rect2(96, 30, 16, 16), Rect2(112, 30, 16, 16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Flame:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.48),
+"transitions": PackedFloat32Array(1.07177, 0.307787),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_roj7s"]
+resource_name = "flame_out"
+length = 0.48
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flame:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(48, 30, 16, 16), Rect2(64, 30, 16, 16), Rect2(80, 30, 16, 16), Rect2(96, 30, 16, 16), Rect2(112, 30, 16, 16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Flame:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.48),
+"transitions": PackedFloat32Array(0.307787, 1.07177),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fqfdb"]
+_data = {
+"RESET": SubResource("Animation_r1nr7"),
+"flame": SubResource("Animation_jogye"),
+"flame_in": SubResource("Animation_6rocu"),
+"flame_out": SubResource("Animation_roj7s")
+}
+
+[node name="TopStem" type="NinePatchRect"]
+custom_minimum_size = Vector2(16, 6)
+offset_right = 16.0
+offset_bottom = 16.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("1_is2s3")
+region_rect = Rect2(16, 0, 16, 16)
+patch_margin_top = 10
+script = ExtResource("2_hhirv")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_fpwfc")
+bus = &"Sfx"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fqfdb")
+}
+
+[node name="Flame" type="NinePatchRect" parent="."]
+light_mask = 2
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -26.0
+offset_right = 8.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_is2s3")
+region_rect = Rect2(48, 30, 16, 16)

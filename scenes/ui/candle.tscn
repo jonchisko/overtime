@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://d13fxmnff06hx"]
+
+[ext_resource type="Script" path="res://scenes/ui/candle_ui.gd" id="1_a0c5s"]
+[ext_resource type="PackedScene" uid="uid://b3kbcd8bx236d" path="res://scenes/ui/top_stem.tscn" id="1_nwhyf"]
+[ext_resource type="Texture2D" uid="uid://naw018vjma6d" path="res://assets/ui/Sprite-0008-Sheet.png" id="2_fvha8"]
+
+[node name="Candle" type="Control"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+script = ExtResource("1_a0c5s")
+
+[node name="CandleVBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -330.0
+offset_right = 16.0
+grow_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="TopStem" parent="CandleVBox" instance=ExtResource("1_nwhyf")]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="MainStem" type="NinePatchRect" parent="CandleVBox"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = ExtResource("2_fvha8")
+region_rect = Rect2(16, 13, 16, 16)

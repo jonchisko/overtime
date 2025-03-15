@@ -12,4 +12,31 @@ config_version=5
 
 config/name="New Game Project"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/bg_color=Color(0.148598, 0.110775, 0.250721, 1)
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/window_width_override=1920
+window/size/window_height_override=1080
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+window/size/mode.release=0
+
+[gui]
+
+theme/default_font_antialiasing=0
+
+[layer_names]
+
+2d_physics/layer_1="Floor"
+2d_physics/layer_2="Enemy"
+2d_physics/layer_3="Player"
+2d_physics/layer_4="Item"
+2d_physics/layer_5="Obstacle"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
