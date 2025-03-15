@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://f8voqy45b4eu"]
+
+[ext_resource type="Script" path="res://scenes/ui/damage_text/floating_text.gd" id="1_lx5qd"]
+
+[node name="FloatingText" type="Node2D"]
+position = Vector2(132, 89)
+script = ExtResource("1_lx5qd")
+distance = 30.0
+duration = 0.5
+scale_amount = 0.3
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -12.0
+offset_right = 20.0
+offset_bottom = 11.0
+pivot_offset = Vector2(20, 11)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 10
+text = "30"
+horizontal_alignment = 1
+vertical_alignment = 1
